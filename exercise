@@ -1,0 +1,53 @@
+#include<iostream>
+#include<Windows.h>
+using namespace std;
+
+//Заповнити матрицю n на m дійсних чисел довільним чином. (використовуючи функцію генерування випадкових чисел)
+//Скласти та надрукувати матрицю, кожний елемент якої обчислюється як різниця відповідного
+//елемента заданої матриці та мінімального елемента рядка.Визначити та надрукувати
+//мінімальний елемент в кожній колонні заданої матриці.
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);   
+
+        
+    const int  Row = 15;
+    const int Col = 15;
+    int mass[Row][Col];
+    for (int n = 0; n < Row; n++)
+    {
+        for (int m = 0; m < Col; m++)
+        {
+            mass[n][m] = rand();
+        }
+    }
+    // min line & min value
+    int minV = mass[0][0], line = 0;
+    for (int n = 0; n < Row; n++)
+    {
+        for (int m = 0; m < Col; m++)
+        {
+            if (mass[n][m] < minV)
+            {
+                minV = mass[n][m];
+                line = n;
+            }
+        }
+    }
+
+    for (int n = 0; n < Row; n++)
+    {
+        for (int m = 0; m < Col; m++)
+        {
+            mass[0][m] = minV;
+            cout << mass[n][m] - line << "\t";
+        }
+        cout << endl;
+    }
+    cout << minV << endl;
+    cout << line << endl;
+    system("pause");
+    return 0;
+}
