@@ -10,12 +10,13 @@ using namespace std;
 int main()
 {
     SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);   
+    SetConsoleOutputCP(1251);
 
-        
-    const int  Row = 15;
-    const int Col = 15;
+    const int  Row = 10;
+    const int Col = 10;
     int mass[Row][Col];
+    cout << "< Матриця >" << endl;
+    cout << "----------------------------------------" << endl;
     for (int n = 0; n < Row; n++)
     {
         for (int m = 0; m < Col; m++)
@@ -36,18 +37,25 @@ int main()
             }
         }
     }
+    cout << "Мінімальний елемент в заданої нам матриці: " << minV << endl;
+    cout << "Рядок мінімального елемента: " << line + 1 << endl;
+    cout << "----------------------------------------" << endl;
+
 
     for (int n = 0; n < Row; n++)
     {
+        cout << "|\t";
         for (int m = 0; m < Col; m++)
         {
-            mass[0][m] = minV;
+            mass[0][m] = minV + line;
             cout << mass[n][m] - line << "\t";
+
         }
+        cout << "\t|";
         cout << endl;
     }
-    cout << minV << endl;
-    cout << line << endl;
+
+    cout << "----------------------------------------" << endl;
     system("pause");
     return 0;
 }
