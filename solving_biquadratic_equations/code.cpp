@@ -20,7 +20,7 @@ int main()
 			x2_square = (-b - D_root) / (2 * a);
 			x1 = (round(sqrt(x1_square)*100))/100;
 			x2 = -x1;
-			x3 = (round(sqrt(x2_square))*100);
+			x3 = (round(sqrt(x2_square))*100)/100;
 			x4 = -x3;
 			if (x1_square >= 0 && x2_square >= 0)
 			{
